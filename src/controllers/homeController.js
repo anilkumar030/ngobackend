@@ -158,6 +158,12 @@ const getHomeData = catchAsync(async (req, res) => {
       };
     });
 
+    //make this campaign at top with id a2481553-8f7c-41ed-b72b-0f3256dcff21
+    const campaign = processedCampaigns.find(campaign => campaign.id === 'a2481553-8f7c-41ed-b72b-0f3256dcff21');
+    if (campaign) {
+      processedCampaigns.unshift(campaign);
+    }
+
     const processedEvents = latestEvents.map(event => {
       const publicData = event.getPublicData();
       // Return only essential fields for home page
