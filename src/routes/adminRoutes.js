@@ -326,8 +326,8 @@ const getRecentActivity = catchAsync(async (req, res) => {
         timestamp: user.created_at,
         data: {
           user_id: user.id,
-          user_name: `${user.first_name} ${user.last_name}`,
-          user_email: user.email,
+          user_name: `${user.first_name || ''} ${user.last_name || ''}`.trim() || 'Unknown User',
+          user_email: user.email || 'No email provided',
         },
       });
     });
@@ -341,12 +341,14 @@ const getRecentActivity = catchAsync(async (req, res) => {
         {
           model: User,
           as: 'user',
-          attributes: ['first_name', 'last_name'],
+          attributes: ['first_name', 'last_name', 'email'],
+          required: false, // LEFT JOIN to handle null user_id
         },
         {
           model: Campaign,
           as: 'campaign',
           attributes: ['title'],
+          required: false, // LEFT JOIN for safety
         },
       ],
       order: [['created_at', 'DESC']],
@@ -354,14 +356,36 @@ const getRecentActivity = catchAsync(async (req, res) => {
     });
 
     recentDonations.forEach(donation => {
+      // Use defensive programming for donor name with multiple fallback options
+      let donorName = 'Anonymous';
+      
+      if (donation.is_anonymous) {
+        donorName = 'Anonymous';
+      } else if (donation.donor_name) {
+        // Primary: Use the donor_name field from the donation record
+        donorName = donation.donor_name;
+      } else if (donation.user && donation.user.first_name) {
+        // Secondary: Fallback to user record if available and has name
+        const firstName = donation.user.first_name || '';
+        const lastName = donation.user.last_name || '';
+        donorName = `${firstName} ${lastName}`.trim() || donation.user.email || 'Anonymous';
+      } else if (donation.user && donation.user.email) {
+        // Tertiary: Use email as identifier if no name available
+        donorName = donation.user.email;
+      } else {
+        // Final fallback: Anonymous
+        donorName = 'Anonymous';
+      }
+      
       activities.push({
         type: 'donation_completed',
         timestamp: donation.created_at,
         data: {
           donation_id: donation.id,
           amount: donation.amount,
-          campaign_title: donation.campaign.title,
-          donor_name: donation.is_anonymous ? 'Anonymous' : `${donation.user.first_name} ${donation.user.last_name}`,
+          campaign_title: donation.campaign?.title || 'Unknown Campaign',
+          donor_name: donorName,
+          is_anonymous: donation.is_anonymous || false,
         },
       });
     });
@@ -374,7 +398,8 @@ const getRecentActivity = catchAsync(async (req, res) => {
         {
           model: User,
           as: 'creator',
-          attributes: ['first_name', 'last_name'],
+          attributes: ['first_name', 'last_name', 'email'],
+          required: false, // LEFT JOIN to handle potential null creator_id
         },
       ],
       order: [['created_at', 'DESC']],
@@ -382,13 +407,22 @@ const getRecentActivity = catchAsync(async (req, res) => {
     });
 
     recentCampaigns.forEach(campaign => {
+      // Use defensive programming for creator name
+      let creatorName = 'Unknown Creator';
+      
+      if (campaign.creator) {
+        const firstName = campaign.creator.first_name || '';
+        const lastName = campaign.creator.last_name || '';
+        creatorName = `${firstName} ${lastName}`.trim() || campaign.creator.email || 'Unknown Creator';
+      }
+      
       activities.push({
         type: 'campaign_created',
         timestamp: campaign.created_at,
         data: {
           campaign_id: campaign.id,
-          campaign_title: campaign.title,
-          creator_name: `${campaign.creator.first_name} ${campaign.creator.last_name}`,
+          campaign_title: campaign.title || 'Untitled Campaign',
+          creator_name: creatorName,
           status: campaign.status,
         },
       });

@@ -196,6 +196,64 @@ If you encounter issues:
 
 ---
 
-**Created by**: Claude Assistant  
-**Last Updated**: August 2025  
-**Compatible with**: Node.js 16+, PostgreSQL, Sequelize ORM
+## create-super-admin.js
+
+Creates a new super admin user with full system rights.
+
+### Usage
+
+```bash
+node scripts/create-super-admin.js <email> <password>
+```
+
+### Example
+
+```bash
+node scripts/create-super-admin.js admin@example.com MySecurePass123!
+```
+
+### Password Requirements
+
+- Minimum 12 characters
+- At least one uppercase letter
+- At least one lowercase letter  
+- At least one digit
+- At least one special character
+
+### Features
+
+- ✅ Strong password validation
+- ✅ Email format validation
+- ✅ Duplicate email check
+- ✅ Secure password hashing (bcrypt, 12 salt rounds)
+- ✅ Database transaction handling
+- ✅ Creates default address
+- ✅ Comprehensive error handling
+- ✅ Colored console output
+- ✅ Login credential verification
+
+### Security
+
+- Passwords are not logged in plaintext
+- Uses bcrypt with 12 salt rounds
+- Validates all inputs before processing
+- Uses database transactions for data integrity
+
+## reset-admin-password.js
+
+Resets password for an existing admin user.
+
+### Usage
+
+```bash
+node scripts/reset-admin-password.js [email] [new-password]
+```
+
+### Example
+
+```bash
+node scripts/reset-admin-password.js admin@shivdhaam.org newpassword123
+```
+
+---
+
