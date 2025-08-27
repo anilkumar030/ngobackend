@@ -141,6 +141,7 @@ const getCampaigns = catchAsync(async (req, res) => {
   if (campaign) {
     campaigns.unshift(campaign);
   }
+  console.log(campaigns);
 
   // Calculate progress percentage for each campaign using existing raised_amount
   const campaignsWithProgress = campaigns.map(campaign => {
