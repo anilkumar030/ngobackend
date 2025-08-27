@@ -136,6 +136,12 @@ const getCampaigns = catchAsync(async (req, res) => {
     offset: offset,
   });
 
+  //make this campaign at top which id is a2481553-8f7c-41ed-b72b-0f3256dcff21
+  const campaign = campaigns.find(campaign => campaign.id === 'a2481553-8f7c-41ed-b72b-0f3256dcff21');
+  if (campaign) {
+    campaigns.unshift(campaign);
+  }
+
   // Calculate progress percentage for each campaign using existing raised_amount
   const campaignsWithProgress = campaigns.map(campaign => {
     const campaignData = campaign.toJSON();
