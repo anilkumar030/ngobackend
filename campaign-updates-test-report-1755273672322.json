@@ -1,0 +1,422 @@
+{
+  "summary": {
+    "totalTests": 27,
+    "passed": 21,
+    "failed": 6,
+    "skipped": 0,
+    "startTime": "2025-08-15T16:01:11.100Z",
+    "endTime": "2025-08-15T16:01:12.322Z"
+  },
+  "categories": {
+    "authentication": {
+      "passed": 3,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "Valid admin token authentication",
+          "status": "PASSED",
+          "duration": 70,
+          "details": {
+            "status": 200,
+            "hasAuth": true
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.172Z"
+        },
+        {
+          "name": "Invalid token handling",
+          "status": "PASSED",
+          "duration": 61,
+          "details": {
+            "status": 401,
+            "expectedUnauthorized": true
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.233Z"
+        },
+        {
+          "name": "Missing authorization header",
+          "status": "PASSED",
+          "duration": 22,
+          "details": {
+            "status": 401,
+            "expectedUnauthorized": true
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.257Z"
+        }
+      ]
+    },
+    "validation": {
+      "passed": 7,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "Title validation - minimum length",
+          "status": "PASSED",
+          "duration": 43,
+          "details": {
+            "status": 400,
+            "errorMessage": "Validation failed"
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.301Z"
+        },
+        {
+          "name": "Title validation - maximum length",
+          "status": "PASSED",
+          "duration": 37,
+          "details": {
+            "status": 400,
+            "titleLength": 501
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.339Z"
+        },
+        {
+          "name": "Description validation - minimum length",
+          "status": "PASSED",
+          "duration": 32,
+          "details": {
+            "status": 400,
+            "errorMessage": "Validation failed"
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.371Z"
+        },
+        {
+          "name": "Description validation - maximum length",
+          "status": "PASSED",
+          "duration": 69,
+          "details": {
+            "status": 400,
+            "descriptionLength": 50001
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.440Z"
+        },
+        {
+          "name": "Invalid campaign ID format",
+          "status": "PASSED",
+          "duration": 38,
+          "details": {
+            "status": 400,
+            "errorMessage": "Validation failed"
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.478Z"
+        },
+        {
+          "name": "Images array validation - invalid format",
+          "status": "PASSED",
+          "duration": 36,
+          "details": {
+            "status": 400,
+            "errorMessage": "Validation failed"
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.514Z"
+        },
+        {
+          "name": "Images array validation - invalid URLs",
+          "status": "PASSED",
+          "duration": 39,
+          "details": {
+            "status": 400,
+            "errorMessage": "Validation failed"
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.553Z"
+        }
+      ]
+    },
+    "functionality": {
+      "passed": 5,
+      "failed": 1,
+      "tests": [
+        {
+          "name": "Create campaign update - valid data",
+          "status": "PASSED",
+          "duration": 83,
+          "details": {
+            "status": 201,
+            "updateId": "7864811e-1245-4cf9-a073-eb2b17c0abcf",
+            "hasImages": true
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.638Z"
+        },
+        {
+          "name": "Create campaign update - empty images array",
+          "status": "PASSED",
+          "duration": 56,
+          "details": {
+            "status": 201,
+            "updateId": "0a6b6275-c379-4a09-97b1-719840b18abb",
+            "imagesCount": 0
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.694Z"
+        },
+        {
+          "name": "Get campaign updates with pagination",
+          "status": "FAILED",
+          "duration": 15,
+          "details": {
+            "status": 401,
+            "updatesCount": 0,
+            "hasPagination": false
+          },
+          "errors": [
+            "Request failed with status code 401"
+          ],
+          "timestamp": "2025-08-15T16:01:11.709Z"
+        },
+        {
+          "name": "Get specific campaign update",
+          "status": "PASSED",
+          "duration": 30,
+          "details": {
+            "status": 200,
+            "updateId": "7864811e-1245-4cf9-a073-eb2b17c0abcf",
+            "hasTitle": true,
+            "hasDescription": true
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.740Z"
+        },
+        {
+          "name": "Update campaign update",
+          "status": "PASSED",
+          "duration": 52,
+          "details": {
+            "status": 200,
+            "updateId": "7864811e-1245-4cf9-a073-eb2b17c0abcf",
+            "updatedTitle": "Updated Title 1755273671741"
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.792Z"
+        },
+        {
+          "name": "Test campaign details include updates",
+          "status": "PASSED",
+          "duration": 102,
+          "details": {
+            "status": 200,
+            "campaignId": "7f34e1d7-ba85-42fc-9278-24976f318432",
+            "hasUpdates": true,
+            "updatesCount": 2
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.894Z"
+        }
+      ]
+    },
+    "security": {
+      "passed": 2,
+      "failed": 1,
+      "tests": [
+        {
+          "name": "Unauthorized access to protected endpoints",
+          "status": "PASSED",
+          "duration": 39,
+          "details": {
+            "POST_/campaigns/7f34e1d7-ba85-42fc-9278-24976f318432/updates": 401,
+            "PUT_/campaign-updates/test-id": 401,
+            "DELETE_/campaign-updates/test-id": 401
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.933Z"
+        },
+        {
+          "name": "SQL injection attempts in parameters",
+          "status": "PASSED",
+          "duration": 37,
+          "details": {
+            "injection_0": 400,
+            "injection_1": 400,
+            "injection_2": 400
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:11.971Z"
+        },
+        {
+          "name": "XSS attempts in request body",
+          "status": "FAILED",
+          "duration": 138,
+          "details": {
+            "xss_0": {
+              "status": 201,
+              "sanitized": false
+            },
+            "xss_1": {
+              "status": 201,
+              "sanitized": false
+            },
+            "xss_2": {
+              "status": 201,
+              "sanitized": false
+            }
+          },
+          "errors": [
+            "XSS payload not sanitized: <script>alert(\"xss\")</script>",
+            "XSS payload not sanitized: javascript:alert(\"xss\")",
+            "XSS payload not sanitized: <img src=\"x\" onerror=\"alert('xss')\">"
+          ],
+          "timestamp": "2025-08-15T16:01:12.109Z"
+        }
+      ]
+    },
+    "performance": {
+      "passed": 1,
+      "failed": 1,
+      "tests": [
+        {
+          "name": "Response time for update creation",
+          "status": "PASSED",
+          "duration": 44,
+          "details": {
+            "status": 201,
+            "responseTime": 43,
+            "acceptable": true
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:12.154Z"
+        },
+        {
+          "name": "Pagination performance with large datasets",
+          "status": "FAILED",
+          "duration": 13,
+          "details": {
+            "status": 401,
+            "responseTime": 12,
+            "itemsReturned": 0
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:12.168Z"
+        }
+      ]
+    },
+    "edgeCases": {
+      "passed": 3,
+      "failed": 3,
+      "tests": [
+        {
+          "name": "Non-existent campaign ID",
+          "status": "FAILED",
+          "duration": 26,
+          "details": {
+            "status": 400,
+            "errorMessage": "Validation failed"
+          },
+          "errors": [
+            "Expected 404, got 400"
+          ],
+          "timestamp": "2025-08-15T16:01:12.194Z"
+        },
+        {
+          "name": "Non-existent update ID",
+          "status": "FAILED",
+          "duration": 12,
+          "details": {
+            "status": 400,
+            "errorMessage": "Validation failed"
+          },
+          "errors": [
+            "Expected 404, got 400"
+          ],
+          "timestamp": "2025-08-15T16:01:12.207Z"
+        },
+        {
+          "name": "Delete non-existent update",
+          "status": "FAILED",
+          "duration": 17,
+          "details": {
+            "status": 400,
+            "errorMessage": "Validation failed"
+          },
+          "errors": [
+            "Expected 404, got 400"
+          ],
+          "timestamp": "2025-08-15T16:01:12.225Z"
+        },
+        {
+          "name": "Empty request body",
+          "status": "PASSED",
+          "duration": 25,
+          "details": {
+            "status": 400,
+            "errorMessage": "Validation failed"
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:12.251Z"
+        },
+        {
+          "name": "Update with partial data",
+          "status": "PASSED",
+          "duration": 40,
+          "details": {
+            "status": 200,
+            "updateId": "7864811e-1245-4cf9-a073-eb2b17c0abcf",
+            "partialUpdate": true
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:12.291Z"
+        },
+        {
+          "name": "Very large images array",
+          "status": "PASSED",
+          "duration": 30,
+          "details": {
+            "status": 400,
+            "imagesCount": 15,
+            "errorMessage": "Validation failed"
+          },
+          "errors": [],
+          "timestamp": "2025-08-15T16:01:12.322Z"
+        }
+      ]
+    }
+  },
+  "createdUpdates": [
+    {
+      "id": "7864811e-1245-4cf9-a073-eb2b17c0abcf",
+      "campaignId": "7f34e1d7-ba85-42fc-9278-24976f318432",
+      "title": "Test Campaign Update 1755273671555",
+      "description": "This is a comprehensive test update to verify that campaign update creation works correctly. This description meets all the minimum requirements and provides sufficient detail for testing purposes.",
+      "images": [
+        "https://example.com/image1.jpg",
+        "https://example.com/image2.jpg"
+      ],
+      "created_at": "2025-08-15T16:01:11.587Z",
+      "updated_at": "2025-08-15T16:01:11.591Z"
+    },
+    {
+      "id": "0a6b6275-c379-4a09-97b1-719840b18abb",
+      "campaignId": "7f34e1d7-ba85-42fc-9278-24976f318432",
+      "title": "Test Update No Images 1755273671638",
+      "description": "This is a test update without any images to verify that empty images array works correctly.",
+      "images": [],
+      "created_at": "2025-08-15T16:01:11.670Z",
+      "updated_at": "2025-08-15T16:01:11.671Z"
+    },
+    {
+      "id": "6a0fdbfb-f4fe-4c93-aca8-b9b86f8f6e17",
+      "campaignId": "7f34e1d7-ba85-42fc-9278-24976f318432",
+      "title": "Performance Test Update 1755273672111",
+      "description": "This is a performance test update to measure response time for campaign update creation endpoint",
+      "images": [],
+      "created_at": "2025-08-15T16:01:12.137Z",
+      "updated_at": "2025-08-15T16:01:12.137Z"
+    }
+  ],
+  "errors": [],
+  "testConfiguration": {
+    "baseUrl": "http://localhost:8090",
+    "apiBase": "http://localhost:8090/api",
+    "testCampaignId": "7f34e1d7-ba85-42fc-9278-24976f318432",
+    "nodeVersion": "v20.17.0",
+    "platform": "linux",
+    "timestamp": "2025-08-15T16:01:12.322Z"
+  }
+}

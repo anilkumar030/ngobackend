@@ -1,0 +1,815 @@
+🔄 Loading dependencies...
+🔄 Loading application modules...
+✅ All dependencies loaded successfully
+🚀 Creating Express app...
+📊 Setting up Express configuration...
+✅ Proxy trust set
+🔒 Setting up security middleware...
+✅ Helmet security configured
+🌐 Setting up CORS...
+📁 Setting up static file serving...
+✅ Static file serving configured
+🛣️ Setting up API routes...
+✅ API routes configured
+🔄 Attempting to start server...
+⚡ About to call startServer function...
+📝 Starting server initialization...
+🔗 Testing database connection...
+Redis connection established
+Redis client ready
+Executing (default): SELECT 1+1 AS result
+✅ Database connection successful
+2025-08-10 12:07:04 [[32minfo[39m]: Database connection established successfully
+{
+  "service": "shivdhaam-backend",
+  "environment": "development"
+}
+🔗 Testing Redis connection...
+⚠️ Redis connection failed: redisClient.ping is not a function
+2025-08-10 12:07:04 [[33mwarn[39m]: Redis ping failed:
+{
+  "service": "shivdhaam-backend",
+  "environment": "development"
+}
+🚀 Starting HTTP server on port 5000...
+
+🚀 Server Started Successfully!
+==================================================
+📡 Port: 5000
+🌍 Environment: development
+🔗 Local URL: http://localhost:5000
+📊 Health Check: http://localhost:5000/health
+🛡️  API Base: http://localhost:5000/api
+==================================================
+2025-08-10 12:07:04 [[32minfo[39m]: Server running on port 5000 in development mode
+{
+  "service": "shivdhaam-backend",
+  "environment": "development"
+}
+2025-08-10 12:07:05 [[31merror[39m]: Application Error Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-76c6f0c862fsm1451634b3a.115 - gsmtp
+Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-76c6f0c862fsm1451634b3a.115 - gsmtp
+    at SMTPConnection._formatError (/home/anil/shivdhaam backend/node_modules/nodemailer/lib/smtp-connection/index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (/home/anil/shivdhaam backend/node_modules/nodemailer/lib/smtp-connection/index.js:1588:34)
+    at SMTPConnection.<anonymous> (/home/anil/shivdhaam backend/node_modules/nodemailer/lib/smtp-connection/index.js:556:26)
+    at SMTPConnection._processResponse (/home/anil/shivdhaam backend/node_modules/nodemailer/lib/smtp-connection/index.js:993:20)
+    at SMTPConnection._onData (/home/anil/shivdhaam backend/node_modules/nodemailer/lib/smtp-connection/index.js:774:14)
+    at SMTPConnection._onSocketData (/home/anil/shivdhaam backend/node_modules/nodemailer/lib/smtp-connection/index.js:195:44)
+    at TLSSocket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+{
+  "service": "EmailService",
+  "environment": "development",
+  "name": "Error",
+  "code": "EAUTH",
+  "method": "initializeTransporter"
+}
+2025-08-10 12:09:17 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754807957033_2u7nlf",
+  "method": "GET",
+  "url": "/api/campaigns",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+Executing (default): SELECT count("Campaign"."id") AS "count" FROM "campaigns" AS "Campaign" LEFT OUTER JOIN "users" AS "creator" ON "Campaign"."created_by" = "creator"."id" AND ("creator"."deleted_at" IS NULL) WHERE "Campaign"."status" = 'active';
+Executing (default): SELECT "Campaign"."id", "Campaign"."title", "Campaign"."slug", "Campaign"."description", "Campaign"."long_description", "Campaign"."location", "Campaign"."target_amount", "Campaign"."raised_amount", "Campaign"."donor_count", "Campaign"."status", "Campaign"."featured", "Campaign"."verified", "Campaign"."category", "Campaign"."start_date", "Campaign"."end_date", "Campaign"."images", "Campaign"."metadata", "Campaign"."created_by", "Campaign"."created_at", "Campaign"."updated_at", "creator"."id" AS "creator.id", "creator"."first_name" AS "creator.first_name", "creator"."last_name" AS "creator.last_name", "creator"."email" AS "creator.email" FROM "campaigns" AS "Campaign" LEFT OUTER JOIN "users" AS "creator" ON "Campaign"."created_by" = "creator"."id" AND ("creator"."deleted_at" IS NULL) WHERE "Campaign"."status" = 'active' ORDER BY "Campaign"."created_at" DESC LIMIT 10 OFFSET 0;
+2025-08-10 12:09:17 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754807957033_2u7nlf",
+  "method": "GET",
+  "url": "/api/campaigns",
+  "statusCode": 200,
+  "responseTime": "16ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "9988"
+}
+2025-08-10 12:09:17 [[32minfo[39m]: HTTP Request
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/",
+  "statusCode": 200,
+  "responseTime": "16ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:09:48 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754807988675_79tt8w",
+  "method": "GET",
+  "url": "/api/payment/donations",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+2025-08-10 12:09:48 [[33mwarn[39m]: Security Event
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "event": "Missing authentication token",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "path": "/donations"
+}
+2025-08-10 12:09:48 [[33mwarn[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754807988675_79tt8w",
+  "method": "GET",
+  "url": "/api/payment/donations",
+  "statusCode": 401,
+  "responseTime": "2ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "51",
+  "error": true
+}
+2025-08-10 12:09:48 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/donations",
+  "statusCode": 401,
+  "responseTime": "2ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:09:48 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754807988683_9h0ejl",
+  "method": "GET",
+  "url": "/api/payment/donations",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+2025-08-10 12:09:48 [[33mwarn[39m]: Security Event
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "event": "Missing authentication token",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "path": "/donations"
+}
+2025-08-10 12:09:48 [[33mwarn[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754807988683_9h0ejl",
+  "method": "GET",
+  "url": "/api/payment/donations",
+  "statusCode": 401,
+  "responseTime": "1ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "51",
+  "error": true
+}
+2025-08-10 12:09:48 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/donations",
+  "statusCode": 401,
+  "responseTime": "1ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:10:13 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808013500_nfmkbj",
+  "method": "GET",
+  "url": "/api/admin/dashboard",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+2025-08-10 12:10:13 [[33mwarn[39m]: Security Event
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "event": "Missing authentication token",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "path": "/dashboard"
+}
+2025-08-10 12:10:13 [[33mwarn[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808013500_nfmkbj",
+  "method": "GET",
+  "url": "/api/admin/dashboard",
+  "statusCode": 401,
+  "responseTime": "2ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "51",
+  "error": true
+}
+2025-08-10 12:10:13 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/dashboard",
+  "statusCode": 401,
+  "responseTime": "2ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:10:13 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808013507_5fyu7c",
+  "method": "GET",
+  "url": "/api/admin/dashboard",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+2025-08-10 12:10:13 [[33mwarn[39m]: Security Event
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "event": "Missing authentication token",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "path": "/dashboard"
+}
+2025-08-10 12:10:13 [[33mwarn[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808013507_5fyu7c",
+  "method": "GET",
+  "url": "/api/admin/dashboard",
+  "statusCode": 401,
+  "responseTime": "2ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "51",
+  "error": true
+}
+2025-08-10 12:10:13 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/dashboard",
+  "statusCode": 401,
+  "responseTime": "2ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:10:18 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808018531_3tjjrs",
+  "method": "GET",
+  "url": "/api/stats",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+Executing (default): SELECT sum("amount") AS "sum" FROM "donations" AS "Donation" WHERE "Donation"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "campaigns" AS "Campaign";
+Executing (default): SELECT count(*) AS "count" FROM "campaigns" AS "Campaign" WHERE "Campaign"."status" = 'active';
+Executing (default): SELECT count(*) AS "count" FROM "donations" AS "Donation" WHERE "Donation"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "users" AS "User" WHERE ("User"."deleted_at" IS NULL AND "User"."is_active" = true);
+Executing (default): SELECT count(*) AS "count" FROM "orders" AS "Order" WHERE "Order"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "gallery" AS "Gallery" WHERE "Gallery"."status" = 'active';
+Executing (default): SELECT count(*) AS "count" FROM "gallery" AS "Gallery" WHERE "Gallery"."status" = 'active' AND "Gallery"."featured" = true;
+2025-08-10 12:10:18 [[31merror[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808018531_3tjjrs",
+  "method": "GET",
+  "url": "/api/stats",
+  "statusCode": 500,
+  "responseTime": "7ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "137",
+  "error": true,
+  "errorMessage": "Failed to fetch statistics"
+}
+2025-08-10 12:10:18 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/stats",
+  "statusCode": 500,
+  "responseTime": "7ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:11:15 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808075764_jqls90",
+  "method": "GET",
+  "url": "/api/stats",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+Executing (default): SELECT sum("amount") AS "sum" FROM "donations" AS "Donation" WHERE "Donation"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "campaigns" AS "Campaign";
+Executing (default): SELECT count(*) AS "count" FROM "campaigns" AS "Campaign" WHERE "Campaign"."status" = 'active';
+Executing (default): SELECT count(*) AS "count" FROM "donations" AS "Donation" WHERE "Donation"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "users" AS "User" WHERE ("User"."deleted_at" IS NULL AND "User"."is_active" = true);
+Executing (default): SELECT count(*) AS "count" FROM "orders" AS "Order" WHERE "Order"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "gallery" AS "Gallery" WHERE "Gallery"."status" = 'active';
+Executing (default): SELECT count(*) AS "count" FROM "gallery" AS "Gallery" WHERE "Gallery"."status" = 'active' AND "Gallery"."featured" = true;
+2025-08-10 12:11:15 [[31merror[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808075764_jqls90",
+  "method": "GET",
+  "url": "/api/stats",
+  "statusCode": 500,
+  "responseTime": "13ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "137",
+  "error": true,
+  "errorMessage": "Failed to fetch statistics"
+}
+2025-08-10 12:11:15 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/stats",
+  "statusCode": 500,
+  "responseTime": "13ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:11:15 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808075786_7e0t6i",
+  "method": "GET",
+  "url": "/api/stats",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+Executing (default): SELECT sum("amount") AS "sum" FROM "donations" AS "Donation" WHERE "Donation"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "campaigns" AS "Campaign";
+Executing (default): SELECT count(*) AS "count" FROM "campaigns" AS "Campaign" WHERE "Campaign"."status" = 'active';
+Executing (default): SELECT count(*) AS "count" FROM "donations" AS "Donation" WHERE "Donation"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "users" AS "User" WHERE ("User"."deleted_at" IS NULL AND "User"."is_active" = true);
+Executing (default): SELECT count(*) AS "count" FROM "orders" AS "Order" WHERE "Order"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "gallery" AS "Gallery" WHERE "Gallery"."status" = 'active';
+Executing (default): SELECT count(*) AS "count" FROM "gallery" AS "Gallery" WHERE "Gallery"."status" = 'active' AND "Gallery"."featured" = true;
+2025-08-10 12:11:15 [[31merror[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808075786_7e0t6i",
+  "method": "GET",
+  "url": "/api/stats",
+  "statusCode": 500,
+  "responseTime": "5ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "137",
+  "error": true,
+  "errorMessage": "Failed to fetch statistics"
+}
+2025-08-10 12:11:15 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/stats",
+  "statusCode": 500,
+  "responseTime": "5ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:11:40 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808100287_bu5kb2",
+  "method": "GET",
+  "url": "/api/stats",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+Executing (default): SELECT sum("amount") AS "sum" FROM "donations" AS "Donation" WHERE "Donation"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "campaigns" AS "Campaign";
+Executing (default): SELECT count(*) AS "count" FROM "campaigns" AS "Campaign" WHERE "Campaign"."status" = 'active';
+Executing (default): SELECT count(*) AS "count" FROM "donations" AS "Donation" WHERE "Donation"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "users" AS "User" WHERE ("User"."deleted_at" IS NULL AND "User"."is_active" = true);
+Executing (default): SELECT count(*) AS "count" FROM "orders" AS "Order" WHERE "Order"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "gallery" AS "Gallery" WHERE "Gallery"."status" = 'active';
+Executing (default): SELECT count(*) AS "count" FROM "gallery" AS "Gallery" WHERE "Gallery"."status" = 'active' AND "Gallery"."featured" = true;
+2025-08-10 12:11:40 [[31merror[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808100287_bu5kb2",
+  "method": "GET",
+  "url": "/api/stats",
+  "statusCode": 500,
+  "responseTime": "5ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "137",
+  "error": true,
+  "errorMessage": "Failed to fetch statistics"
+}
+2025-08-10 12:11:40 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/stats",
+  "statusCode": 500,
+  "responseTime": "5ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:12:13 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808133614_4wttiy",
+  "method": "GET",
+  "url": "/api/stats",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+Executing (default): SELECT sum("amount") AS "sum" FROM "donations" AS "Donation" WHERE "Donation"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "campaigns" AS "Campaign";
+Executing (default): SELECT count(*) AS "count" FROM "campaigns" AS "Campaign" WHERE "Campaign"."status" = 'active';
+Executing (default): SELECT count(*) AS "count" FROM "donations" AS "Donation" WHERE "Donation"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "users" AS "User" WHERE ("User"."deleted_at" IS NULL AND "User"."is_active" = true);
+Executing (default): SELECT count(*) AS "count" FROM "orders" AS "Order" WHERE "Order"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "gallery" AS "Gallery" WHERE "Gallery"."status" = 'active';
+Executing (default): SELECT count(*) AS "count" FROM "gallery" AS "Gallery" WHERE "Gallery"."status" = 'active' AND "Gallery"."featured" = true;
+2025-08-10 12:12:13 [[31merror[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808133614_4wttiy",
+  "method": "GET",
+  "url": "/api/stats",
+  "statusCode": 500,
+  "responseTime": "28ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "137",
+  "error": true,
+  "errorMessage": "Failed to fetch statistics"
+}
+2025-08-10 12:12:13 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/stats",
+  "statusCode": 500,
+  "responseTime": "28ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:12:54 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808174302_clnjcs",
+  "method": "GET",
+  "url": "/api/stats",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+Executing (default): SELECT sum("amount") AS "sum" FROM "donations" AS "Donation" WHERE "Donation"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "campaigns" AS "Campaign";
+Executing (default): SELECT count(*) AS "count" FROM "campaigns" AS "Campaign" WHERE "Campaign"."status" = 'active';
+Executing (default): SELECT count(*) AS "count" FROM "donations" AS "Donation" WHERE "Donation"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "users" AS "User" WHERE ("User"."deleted_at" IS NULL AND "User"."is_active" = true);
+Executing (default): SELECT count(*) AS "count" FROM "orders" AS "Order" WHERE "Order"."payment_status" = 'completed';
+Executing (default): SELECT count(*) AS "count" FROM "gallery" AS "Gallery" WHERE "Gallery"."status" = 'active';
+Executing (default): SELECT count(*) AS "count" FROM "gallery" AS "Gallery" WHERE "Gallery"."status" = 'active' AND "Gallery"."featured" = true;
+2025-08-10 12:12:54 [[31merror[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808174302_clnjcs",
+  "method": "GET",
+  "url": "/api/stats",
+  "statusCode": 500,
+  "responseTime": "9ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "137",
+  "error": true,
+  "errorMessage": "Failed to fetch statistics"
+}
+2025-08-10 12:12:54 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/stats",
+  "statusCode": 500,
+  "responseTime": "9ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:17:11 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808431330_ffk63g",
+  "method": "GET",
+  "url": "/api/admin/health",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+2025-08-10 12:17:11 [[33mwarn[39m]: Security Event
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "event": "Missing authentication token",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "path": "/health"
+}
+2025-08-10 12:17:11 [[33mwarn[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808431330_ffk63g",
+  "method": "GET",
+  "url": "/api/admin/health",
+  "statusCode": 401,
+  "responseTime": "0ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "51",
+  "error": true
+}
+2025-08-10 12:17:11 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/health",
+  "statusCode": 401,
+  "responseTime": "0ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:17:16 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808436243_rxskdw",
+  "method": "GET",
+  "url": "/api/campaigns",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+Executing (default): SELECT count("Campaign"."id") AS "count" FROM "campaigns" AS "Campaign" LEFT OUTER JOIN "users" AS "creator" ON "Campaign"."created_by" = "creator"."id" AND ("creator"."deleted_at" IS NULL) WHERE "Campaign"."status" = 'active';
+Executing (default): SELECT "Campaign"."id", "Campaign"."title", "Campaign"."slug", "Campaign"."description", "Campaign"."long_description", "Campaign"."location", "Campaign"."target_amount", "Campaign"."raised_amount", "Campaign"."donor_count", "Campaign"."status", "Campaign"."featured", "Campaign"."verified", "Campaign"."category", "Campaign"."start_date", "Campaign"."end_date", "Campaign"."images", "Campaign"."metadata", "Campaign"."created_by", "Campaign"."created_at", "Campaign"."updated_at", "creator"."id" AS "creator.id", "creator"."first_name" AS "creator.first_name", "creator"."last_name" AS "creator.last_name", "creator"."email" AS "creator.email" FROM "campaigns" AS "Campaign" LEFT OUTER JOIN "users" AS "creator" ON "Campaign"."created_by" = "creator"."id" AND ("creator"."deleted_at" IS NULL) WHERE "Campaign"."status" = 'active' ORDER BY "Campaign"."created_at" DESC LIMIT 10 OFFSET 0;
+2025-08-10 12:17:16 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808436243_rxskdw",
+  "method": "GET",
+  "url": "/api/campaigns",
+  "statusCode": 200,
+  "responseTime": "7ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "9988"
+}
+2025-08-10 12:17:16 [[32minfo[39m]: HTTP Request
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/",
+  "statusCode": 200,
+  "responseTime": "7ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:17:20 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808440280_3odhfm",
+  "method": "GET",
+  "url": "/api/projects/categories",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+Executing (default): SELECT "Project"."id", "Project"."title", "Project"."slug", "Project"."description", "Project"."long_description", "Project"."category", "Project"."status", "Project"."priority", "Project"."location", "Project"."geographic_scope", "Project"."start_date", "Project"."estimated_completion_date", "Project"."actual_completion_date", "Project"."total_budget", "Project"."amount_spent", "Project"."funding_sources", "Project"."beneficiaries_count", "Project"."progress_percentage", "Project"."implementation_strategy", "Project"."impact_metrics", "Project"."stakeholders", "Project"."risks_and_mitigation", "Project"."sustainability_plan", "Project"."featured_image", "Project"."images", "Project"."documents", "Project"."is_featured", "Project"."is_public", "Project"."tags", "Project"."metadata", "Project"."created_by", "Project"."managed_by", "Project"."created_at", "Project"."updated_at", "creator"."id" AS "creator.id", "creator"."first_name" AS "creator.first_name", "creator"."last_name" AS "creator.last_name", "creator"."email" AS "creator.email", "creator"."profile_image" AS "creator.profile_image", "manager"."id" AS "manager.id", "manager"."first_name" AS "manager.first_name", "manager"."last_name" AS "manager.last_name", "manager"."email" AS "manager.email", "manager"."profile_image" AS "manager.profile_image" FROM "projects" AS "Project" LEFT OUTER JOIN "users" AS "creator" ON "Project"."created_by" = "creator"."id" AND ("creator"."deleted_at" IS NULL) LEFT OUTER JOIN "users" AS "manager" ON "Project"."managed_by" = "manager"."id" AND ("manager"."deleted_at" IS NULL) WHERE "Project"."slug" = 'categories';
+2025-08-10 12:17:20 [[31merror[39m]: Application Error Project not found
+Error: Project not found
+    at /home/anil/shivdhaam backend/src/controllers/projectController.js:193:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "name": "Error",
+  "code": "PROJECT_NOT_FOUND",
+  "url": "/api/projects/categories",
+  "method": "GET",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "body": {},
+  "params": {},
+  "query": {}
+}
+2025-08-10 12:17:20 [[33mwarn[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808440280_3odhfm",
+  "method": "GET",
+  "url": "/api/projects/categories",
+  "statusCode": 404,
+  "responseTime": "8ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "139",
+  "error": true
+}
+2025-08-10 12:17:20 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/api/projects/categories",
+  "statusCode": 404,
+  "responseTime": "8ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:17:33 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808453863_57yhjd",
+  "method": "GET",
+  "url": "/api/projects/categories",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+Executing (default): SELECT "Project"."id", "Project"."title", "Project"."slug", "Project"."description", "Project"."long_description", "Project"."category", "Project"."status", "Project"."priority", "Project"."location", "Project"."geographic_scope", "Project"."start_date", "Project"."estimated_completion_date", "Project"."actual_completion_date", "Project"."total_budget", "Project"."amount_spent", "Project"."funding_sources", "Project"."beneficiaries_count", "Project"."progress_percentage", "Project"."implementation_strategy", "Project"."impact_metrics", "Project"."stakeholders", "Project"."risks_and_mitigation", "Project"."sustainability_plan", "Project"."featured_image", "Project"."images", "Project"."documents", "Project"."is_featured", "Project"."is_public", "Project"."tags", "Project"."metadata", "Project"."created_by", "Project"."managed_by", "Project"."created_at", "Project"."updated_at", "creator"."id" AS "creator.id", "creator"."first_name" AS "creator.first_name", "creator"."last_name" AS "creator.last_name", "creator"."email" AS "creator.email", "creator"."profile_image" AS "creator.profile_image", "manager"."id" AS "manager.id", "manager"."first_name" AS "manager.first_name", "manager"."last_name" AS "manager.last_name", "manager"."email" AS "manager.email", "manager"."profile_image" AS "manager.profile_image" FROM "projects" AS "Project" LEFT OUTER JOIN "users" AS "creator" ON "Project"."created_by" = "creator"."id" AND ("creator"."deleted_at" IS NULL) LEFT OUTER JOIN "users" AS "manager" ON "Project"."managed_by" = "manager"."id" AND ("manager"."deleted_at" IS NULL) WHERE "Project"."slug" = 'categories';
+2025-08-10 12:17:33 [[31merror[39m]: Application Error Project not found
+Error: Project not found
+    at /home/anil/shivdhaam backend/src/controllers/projectController.js:193:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "name": "Error",
+  "code": "PROJECT_NOT_FOUND",
+  "url": "/api/projects/categories",
+  "method": "GET",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "body": {},
+  "params": {},
+  "query": {}
+}
+2025-08-10 12:17:33 [[33mwarn[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808453863_57yhjd",
+  "method": "GET",
+  "url": "/api/projects/categories",
+  "statusCode": 404,
+  "responseTime": "3ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "139",
+  "error": true
+}
+2025-08-10 12:17:33 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/api/projects/categories",
+  "statusCode": 404,
+  "responseTime": "3ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:17:45 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808465840_rlt4h3",
+  "method": "GET",
+  "url": "/api/projects/categories",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+Executing (default): SELECT "Project"."id", "Project"."title", "Project"."slug", "Project"."description", "Project"."long_description", "Project"."category", "Project"."status", "Project"."priority", "Project"."location", "Project"."geographic_scope", "Project"."start_date", "Project"."estimated_completion_date", "Project"."actual_completion_date", "Project"."total_budget", "Project"."amount_spent", "Project"."funding_sources", "Project"."beneficiaries_count", "Project"."progress_percentage", "Project"."implementation_strategy", "Project"."impact_metrics", "Project"."stakeholders", "Project"."risks_and_mitigation", "Project"."sustainability_plan", "Project"."featured_image", "Project"."images", "Project"."documents", "Project"."is_featured", "Project"."is_public", "Project"."tags", "Project"."metadata", "Project"."created_by", "Project"."managed_by", "Project"."created_at", "Project"."updated_at", "creator"."id" AS "creator.id", "creator"."first_name" AS "creator.first_name", "creator"."last_name" AS "creator.last_name", "creator"."email" AS "creator.email", "creator"."profile_image" AS "creator.profile_image", "manager"."id" AS "manager.id", "manager"."first_name" AS "manager.first_name", "manager"."last_name" AS "manager.last_name", "manager"."email" AS "manager.email", "manager"."profile_image" AS "manager.profile_image" FROM "projects" AS "Project" LEFT OUTER JOIN "users" AS "creator" ON "Project"."created_by" = "creator"."id" AND ("creator"."deleted_at" IS NULL) LEFT OUTER JOIN "users" AS "manager" ON "Project"."managed_by" = "manager"."id" AND ("manager"."deleted_at" IS NULL) WHERE "Project"."slug" = 'categories';
+2025-08-10 12:17:45 [[31merror[39m]: Application Error Project not found
+Error: Project not found
+    at /home/anil/shivdhaam backend/src/controllers/projectController.js:193:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "name": "Error",
+  "code": "PROJECT_NOT_FOUND",
+  "url": "/api/projects/categories",
+  "method": "GET",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "body": {},
+  "params": {},
+  "query": {}
+}
+2025-08-10 12:17:45 [[33mwarn[39m]: HTTP Request Completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "requestId": "req_1754808465840_rlt4h3",
+  "method": "GET",
+  "url": "/api/projects/categories",
+  "statusCode": 404,
+  "responseTime": "3ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "139",
+  "error": true
+}
+2025-08-10 12:17:45 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "shivdhaam-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/api/projects/categories",
+  "statusCode": 404,
+  "responseTime": "3ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-10 12:18:17 [[32minfo[39m]: Received SIGTERM. Starting graceful shutdown...
+{
+  "service": "shivdhaam-backend",
+  "environment": "development"
+}
+2025-08-10 12:18:17 [[32minfo[39m]: Database connection closed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development"
+}
+2025-08-10 12:18:17 [[32minfo[39m]: Graceful shutdown completed
+{
+  "service": "shivdhaam-backend",
+  "environment": "development"
+}

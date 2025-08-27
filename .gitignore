@@ -1,0 +1,10 @@
+logs/
+node_modules/
+node_modules
+api_docs/
+.DS_Store
+.env
+dist/
+coverage/
+build/
+.claude

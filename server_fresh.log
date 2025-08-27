@@ -1,0 +1,1819 @@
+🔄 Loading dependencies...
+🔄 Loading application modules...
+✅ All dependencies loaded successfully
+🚀 Creating Express app...
+📊 Setting up Express configuration...
+✅ Proxy trust set
+🔒 Setting up security middleware...
+✅ Helmet security configured
+🌐 Setting up CORS...
+📁 Setting up static file serving...
+✅ Static file serving configured
+🛣️ Setting up API routes...
+✅ API routes configured
+🔄 Attempting to start server...
+⚡ About to call startServer function...
+📝 Starting server initialization...
+🔗 Testing database connection...
+Redis connection established
+Redis client ready
+Executing (default): SELECT 1+1 AS result
+✅ Database connection successful
+2025-08-14 18:02:23 [[32minfo[39m]: Database connection established successfully
+{
+  "service": "bdrf-backend",
+  "environment": "development"
+}
+🔗 Testing Redis connection...
+⚠️ Redis connection failed: redisClient.ping is not a function
+2025-08-14 18:02:23 [[33mwarn[39m]: Redis ping failed:
+{
+  "service": "bdrf-backend",
+  "environment": "development"
+}
+🚀 Starting HTTP server on port 5000...
+
+🚀 Server Started Successfully!
+==================================================
+📡 Port: 5000
+🌍 Environment: development
+🔗 Local URL: http://localhost:5000
+📊 Health Check: http://localhost:5000/health
+🛡️  API Base: http://localhost:5000/api
+==================================================
+2025-08-14 18:02:23 [[32minfo[39m]: Server running on port 5000 in development mode
+{
+  "service": "bdrf-backend",
+  "environment": "development"
+}
+2025-08-14 18:02:24 [[32minfo[39m]: Email service initialized successfully
+{
+  "service": "bdrf-backend",
+  "environment": "development"
+}
+2025-08-14 18:02:32 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174752103_06684j",
+  "method": "GET",
+  "url": "/health",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+2025-08-14 18:02:32 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174752103_06684j",
+  "method": "GET",
+  "url": "/health",
+  "statusCode": 200,
+  "responseTime": "24ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "103"
+}
+2025-08-14 18:02:32 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/health",
+  "statusCode": 200,
+  "responseTime": "24ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-14 18:02:37 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174757741_mzf59p",
+  "method": "POST",
+  "url": "/api/auth/login",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": "54"
+}
+Executing (default): SELECT "id", "email", "password_hash", "first_name", "last_name", "phone_number", "date_of_birth", "gender", "profile_image", "role", "is_email_verified", "is_phone_verified", "email_verification_token", "email_verified_at", "phone_verification_code", "phone_verified_at", "reset_password_token", "reset_password_expires", "refresh_token", "total_donations", "donation_count", "preferences", "last_login", "is_active", "created_at", "updated_at", "deleted_at" FROM "users" AS "User" WHERE ("User"."deleted_at" IS NULL AND "User"."email" = 'admin@shivdhaam.org');
+Executing (default): UPDATE "users" SET "refresh_token"=$1,"last_login"=$2,"updated_at"=$3 WHERE "id" = $4
+2025-08-14 18:02:38 [[32minfo[39m]: Authentication Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "action": "User login",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "email": "admin@shivdhaam.org",
+  "rememberMe": false
+}
+2025-08-14 18:02:38 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174757741_mzf59p",
+  "method": "POST",
+  "url": "/api/auth/login",
+  "statusCode": 200,
+  "responseTime": "694ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": "796"
+}
+2025-08-14 18:02:38 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/login",
+  "statusCode": 200,
+  "responseTime": "694ms",
+  "userAgent": "axios/1.11.0",
+  "ip": "::ffff:127.0.0.1"
+}
+2025-08-14 18:02:38 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174758484_97vxb0",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": "2509"
+}
+2025-08-14 18:02:38 [[32minfo[39m]: Authentication Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "action": "Token authenticated",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "email": "admin@shivdhaam.org",
+  "role": "super_admin"
+}
+2025-08-14 18:02:38 [[32minfo[39m]: Processed uploaded files:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "fields": [
+    "featured_image",
+    "gallery_images"
+  ],
+  "totalFiles": 3
+}
+2025-08-14 18:02:38 [[32minfo[39m]: Files uploaded for campaign:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "fieldsWithFiles": [
+    "featured_image",
+    "gallery_images"
+  ],
+  "totalFiles": 3
+}
+2025-08-14 18:02:38 [[32minfo[39m]: Creating campaign with data:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "title": "FormData Test with Files",
+  "slug": "formdata-test-files-1755174758455",
+  "category": "infrastructure",
+  "status": "draft",
+  "hasImages": true,
+  "imageCount": 3,
+  "featuredImageFromFormData": true,
+  "galleryImagesFromFormData": 2,
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+Executing (default): SELECT "id", "title", "slug", "description", "short_description", "long_description", "location", "target_amount", "raised_amount", "donor_count", "status", "featured", "verified", "category", "contact_phone", "contact_email", "beneficiary_details", "visibility", "seo_title", "seo_description", "tags", "meta_keywords", "start_date", "end_date", "images", "metadata", "created_by", "created_at", "updated_at" FROM "campaigns" AS "Campaign" WHERE "Campaign"."slug" = 'formdata-test-files-1755174758455';
+Executing (default): INSERT INTO "campaigns" ("id","title","slug","description","short_description","target_amount","raised_amount","donor_count","status","featured","verified","category","visibility","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22) RETURNING "id","title","slug","description","short_description","long_description","location","target_amount","raised_amount","donor_count","status","featured","verified","category","contact_phone","contact_email","beneficiary_details","visibility","seo_title","seo_description","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at";
+2025-08-14 18:02:38 [[32minfo[39m]: Database Operation
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "operation": "Campaign created",
+  "model": "Campaign",
+  "campaignId": "8834a966-01d8-43a2-855d-26391c351806",
+  "title": "FormData Test with Files",
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "status": "draft",
+  "hasShortDescription": true,
+  "tagsCount": 3,
+  "metaKeywordsCount": 0
+}
+2025-08-14 18:02:38 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174758484_97vxb0",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "statusCode": 201,
+  "responseTime": "141ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": 0,
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "userEmail": "admin@shivdhaam.org",
+  "userRole": "super_admin"
+}
+2025-08-14 18:02:38 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/",
+  "statusCode": 201,
+  "responseTime": "141ms",
+  "userAgent": "axios/1.11.0",
+  "ip": "::ffff:127.0.0.1",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+2025-08-14 18:02:38 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174758670_r4fnb4",
+  "method": "GET",
+  "url": "/upload/campaigns/1755174758523-1ef8186e-adc0-4eec-a88a-e06b0f81c3ba.jpg",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": 0
+}
+2025-08-14 18:02:38 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174758670_r4fnb4",
+  "method": "GET",
+  "url": "/upload/campaigns/1755174758523-1ef8186e-adc0-4eec-a88a-e06b0f81c3ba.jpg",
+  "statusCode": 200,
+  "responseTime": "19ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": 154
+}
+2025-08-14 18:02:38 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/campaigns/1755174758523-1ef8186e-adc0-4eec-a88a-e06b0f81c3ba.jpg",
+  "statusCode": 200,
+  "responseTime": "19ms",
+  "userAgent": "axios/1.11.0",
+  "ip": "::ffff:127.0.0.1"
+}
+2025-08-14 18:02:38 [[33mwarn[39m]: HTTP Request Closed Unexpectedly
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174758670_r4fnb4",
+  "method": "GET",
+  "url": "/upload/campaigns/1755174758523-1ef8186e-adc0-4eec-a88a-e06b0f81c3ba.jpg",
+  "responseTime": "25ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0"
+}
+2025-08-14 18:02:38 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174758700_1rkctq",
+  "method": "GET",
+  "url": "/upload/campaigns/1755174758528-91127285-ea4d-417b-9529-adaeb6fc20bb.jpg",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": 0
+}
+2025-08-14 18:02:38 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174758700_1rkctq",
+  "method": "GET",
+  "url": "/upload/campaigns/1755174758528-91127285-ea4d-417b-9529-adaeb6fc20bb.jpg",
+  "statusCode": 200,
+  "responseTime": "9ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": 154
+}
+2025-08-14 18:02:38 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/campaigns/1755174758528-91127285-ea4d-417b-9529-adaeb6fc20bb.jpg",
+  "statusCode": 200,
+  "responseTime": "9ms",
+  "userAgent": "axios/1.11.0",
+  "ip": "::ffff:127.0.0.1"
+}
+2025-08-14 18:02:38 [[33mwarn[39m]: HTTP Request Closed Unexpectedly
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174758700_1rkctq",
+  "method": "GET",
+  "url": "/upload/campaigns/1755174758528-91127285-ea4d-417b-9529-adaeb6fc20bb.jpg",
+  "responseTime": "13ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0"
+}
+2025-08-14 18:02:38 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174758718_jkpcji",
+  "method": "GET",
+  "url": "/upload/campaigns/1755174758529-594e0f73-ae6b-4309-aff1-4db3dc0b235d.jpg",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": 0
+}
+2025-08-14 18:02:38 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174758718_jkpcji",
+  "method": "GET",
+  "url": "/upload/campaigns/1755174758529-594e0f73-ae6b-4309-aff1-4db3dc0b235d.jpg",
+  "statusCode": 200,
+  "responseTime": "6ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": 154
+}
+2025-08-14 18:02:38 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/campaigns/1755174758529-594e0f73-ae6b-4309-aff1-4db3dc0b235d.jpg",
+  "statusCode": 200,
+  "responseTime": "6ms",
+  "userAgent": "axios/1.11.0",
+  "ip": "::ffff:127.0.0.1"
+}
+2025-08-14 18:02:38 [[33mwarn[39m]: HTTP Request Closed Unexpectedly
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174758718_jkpcji",
+  "method": "GET",
+  "url": "/upload/campaigns/1755174758529-594e0f73-ae6b-4309-aff1-4db3dc0b235d.jpg",
+  "responseTime": "9ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0"
+}
+2025-08-14 18:03:03 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174783630_wj5es2",
+  "method": "POST",
+  "url": "/api/auth/login",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": "54"
+}
+Executing (default): SELECT "id", "email", "password_hash", "first_name", "last_name", "phone_number", "date_of_birth", "gender", "profile_image", "role", "is_email_verified", "is_phone_verified", "email_verification_token", "email_verified_at", "phone_verification_code", "phone_verified_at", "reset_password_token", "reset_password_expires", "refresh_token", "total_donations", "donation_count", "preferences", "last_login", "is_active", "created_at", "updated_at", "deleted_at" FROM "users" AS "User" WHERE ("User"."deleted_at" IS NULL AND "User"."email" = 'admin@shivdhaam.org');
+Executing (default): UPDATE "users" SET "refresh_token"=$1,"last_login"=$2,"updated_at"=$3 WHERE "id" = $4
+2025-08-14 18:03:04 [[32minfo[39m]: Authentication Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "action": "User login",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "email": "admin@shivdhaam.org",
+  "rememberMe": false
+}
+2025-08-14 18:03:04 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174783630_wj5es2",
+  "method": "POST",
+  "url": "/api/auth/login",
+  "statusCode": 200,
+  "responseTime": "866ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": "796"
+}
+2025-08-14 18:03:04 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/login",
+  "statusCode": 200,
+  "responseTime": "866ms",
+  "userAgent": "axios/1.11.0",
+  "ip": "::ffff:127.0.0.1"
+}
+2025-08-14 18:03:04 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174784508_opnkl4",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": "492"
+}
+2025-08-14 18:03:04 [[32minfo[39m]: Authentication Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "action": "Token authenticated",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "email": "admin@shivdhaam.org",
+  "role": "super_admin"
+}
+2025-08-14 18:03:04 [[32minfo[39m]: Creating campaign with data:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "title": "Test Campaign JSON",
+  "slug": "test-campaign-json",
+  "category": "education",
+  "status": "draft",
+  "hasImages": true,
+  "imageCount": 1,
+  "featuredImageFromFormData": false,
+  "galleryImagesFromFormData": 0,
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+Executing (default): SELECT "id", "title", "slug", "description", "short_description", "long_description", "location", "target_amount", "raised_amount", "donor_count", "status", "featured", "verified", "category", "contact_phone", "contact_email", "beneficiary_details", "visibility", "seo_title", "seo_description", "tags", "meta_keywords", "start_date", "end_date", "images", "metadata", "created_by", "created_at", "updated_at" FROM "campaigns" AS "Campaign" WHERE "Campaign"."slug" = 'test-campaign-json';
+Executing (default): INSERT INTO "campaigns" ("id","title","slug","description","short_description","target_amount","raised_amount","donor_count","status","featured","verified","category","visibility","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22) RETURNING "id","title","slug","description","short_description","long_description","location","target_amount","raised_amount","donor_count","status","featured","verified","category","contact_phone","contact_email","beneficiary_details","visibility","seo_title","seo_description","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at";
+2025-08-14 18:03:04 [[32minfo[39m]: Database Operation
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "operation": "Campaign created",
+  "model": "Campaign",
+  "campaignId": "9f7535e3-f01e-4115-95df-9b08c351f755",
+  "title": "Test Campaign JSON",
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "status": "draft",
+  "hasShortDescription": true,
+  "tagsCount": 2,
+  "metaKeywordsCount": 0
+}
+2025-08-14 18:03:04 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174784508_opnkl4",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "statusCode": 201,
+  "responseTime": "17ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": "1003",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "userEmail": "admin@shivdhaam.org",
+  "userRole": "super_admin"
+}
+2025-08-14 18:03:04 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/",
+  "statusCode": 201,
+  "responseTime": "17ms",
+  "userAgent": "axios/1.11.0",
+  "ip": "::ffff:127.0.0.1",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+2025-08-14 18:03:04 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174784544_jpesip",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": "1566"
+}
+2025-08-14 18:03:04 [[32minfo[39m]: Authentication Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "action": "Token authenticated",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "email": "admin@shivdhaam.org",
+  "role": "super_admin"
+}
+2025-08-14 18:03:04 [[32minfo[39m]: Processed uploaded files:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "fields": [],
+  "totalFiles": 0
+}
+2025-08-14 18:03:04 [[32minfo[39m]: Files uploaded for campaign:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "fieldsWithFiles": [],
+  "totalFiles": 0
+}
+2025-08-14 18:03:04 [[32minfo[39m]: Creating campaign with data:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "title": "Test Campaign FormData",
+  "slug": "test-campaign-formdata",
+  "category": "healthcare",
+  "status": "draft",
+  "hasImages": false,
+  "imageCount": 0,
+  "featuredImageFromFormData": false,
+  "galleryImagesFromFormData": 0,
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+Executing (default): SELECT "id", "title", "slug", "description", "short_description", "long_description", "location", "target_amount", "raised_amount", "donor_count", "status", "featured", "verified", "category", "contact_phone", "contact_email", "beneficiary_details", "visibility", "seo_title", "seo_description", "tags", "meta_keywords", "start_date", "end_date", "images", "metadata", "created_by", "created_at", "updated_at" FROM "campaigns" AS "Campaign" WHERE "Campaign"."slug" = 'test-campaign-formdata';
+Executing (default): INSERT INTO "campaigns" ("id","title","slug","description","short_description","target_amount","raised_amount","donor_count","status","featured","verified","category","visibility","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22) RETURNING "id","title","slug","description","short_description","long_description","location","target_amount","raised_amount","donor_count","status","featured","verified","category","contact_phone","contact_email","beneficiary_details","visibility","seo_title","seo_description","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at";
+2025-08-14 18:03:04 [[32minfo[39m]: Database Operation
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "operation": "Campaign created",
+  "model": "Campaign",
+  "campaignId": "0b468212-f637-4615-9458-6cb540aba13b",
+  "title": "Test Campaign FormData",
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "status": "draft",
+  "hasShortDescription": true,
+  "tagsCount": 2,
+  "metaKeywordsCount": 0
+}
+2025-08-14 18:03:04 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174784544_jpesip",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "statusCode": 201,
+  "responseTime": "63ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": "974",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "userEmail": "admin@shivdhaam.org",
+  "userRole": "super_admin"
+}
+2025-08-14 18:03:04 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/",
+  "statusCode": 201,
+  "responseTime": "63ms",
+  "userAgent": "axios/1.11.0",
+  "ip": "::ffff:127.0.0.1",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+2025-08-14 18:03:04 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174784624_szocr9",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": "2131"
+}
+2025-08-14 18:03:04 [[32minfo[39m]: Authentication Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "action": "Token authenticated",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "email": "admin@shivdhaam.org",
+  "role": "super_admin"
+}
+2025-08-14 18:03:04 [[32minfo[39m]: Processed uploaded files:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "fields": [
+    "featured_image",
+    "gallery_images"
+  ],
+  "totalFiles": 3
+}
+2025-08-14 18:03:04 [[32minfo[39m]: Files uploaded for campaign:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "fieldsWithFiles": [
+    "featured_image",
+    "gallery_images"
+  ],
+  "totalFiles": 3
+}
+2025-08-14 18:03:04 [[32minfo[39m]: Creating campaign with data:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "title": "Test Campaign with Files",
+  "slug": "test-campaign-with-files",
+  "category": "infrastructure",
+  "status": "draft",
+  "hasImages": true,
+  "imageCount": 3,
+  "featuredImageFromFormData": true,
+  "galleryImagesFromFormData": 2,
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+Executing (default): SELECT "id", "title", "slug", "description", "short_description", "long_description", "location", "target_amount", "raised_amount", "donor_count", "status", "featured", "verified", "category", "contact_phone", "contact_email", "beneficiary_details", "visibility", "seo_title", "seo_description", "tags", "meta_keywords", "start_date", "end_date", "images", "metadata", "created_by", "created_at", "updated_at" FROM "campaigns" AS "Campaign" WHERE "Campaign"."slug" = 'test-campaign-with-files';
+Executing (default): INSERT INTO "campaigns" ("id","title","slug","description","short_description","target_amount","raised_amount","donor_count","status","featured","verified","category","visibility","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22) RETURNING "id","title","slug","description","short_description","long_description","location","target_amount","raised_amount","donor_count","status","featured","verified","category","contact_phone","contact_email","beneficiary_details","visibility","seo_title","seo_description","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at";
+2025-08-14 18:03:04 [[32minfo[39m]: Database Operation
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "operation": "Campaign created",
+  "model": "Campaign",
+  "campaignId": "3b5100f9-e3c5-4651-9f8b-f35e06026a5f",
+  "title": "Test Campaign with Files",
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "status": "draft",
+  "hasShortDescription": true,
+  "tagsCount": 3,
+  "metaKeywordsCount": 0
+}
+2025-08-14 18:03:04 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174784624_szocr9",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "statusCode": 201,
+  "responseTime": "62ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "axios/1.11.0",
+  "contentLength": 0,
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "userEmail": "admin@shivdhaam.org",
+  "userRole": "super_admin"
+}
+2025-08-14 18:03:04 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/",
+  "statusCode": 201,
+  "responseTime": "62ms",
+  "userAgent": "axios/1.11.0",
+  "ip": "::ffff:127.0.0.1",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+2025-08-14 18:05:57 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174957975_f590fu",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "506"
+}
+2025-08-14 18:05:57 [[32minfo[39m]: Authentication Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "action": "Token authenticated",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "email": "admin@shivdhaam.org",
+  "role": "super_admin"
+}
+2025-08-14 18:05:57 [[32minfo[39m]: Creating campaign with data:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "title": "Test JSON Campaign API Testing",
+  "slug": "test-json-campaign-api-testing",
+  "category": "education",
+  "status": "draft",
+  "hasImages": false,
+  "imageCount": 0,
+  "featuredImageFromFormData": false,
+  "galleryImagesFromFormData": 0,
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+Executing (default): SELECT "id", "title", "slug", "description", "short_description", "long_description", "location", "target_amount", "raised_amount", "donor_count", "status", "featured", "verified", "category", "contact_phone", "contact_email", "beneficiary_details", "visibility", "seo_title", "seo_description", "tags", "meta_keywords", "start_date", "end_date", "images", "metadata", "created_by", "created_at", "updated_at" FROM "campaigns" AS "Campaign" WHERE "Campaign"."slug" = 'test-json-campaign-api-testing';
+Executing (default): INSERT INTO "campaigns" ("id","title","slug","description","short_description","target_amount","raised_amount","donor_count","status","featured","verified","category","visibility","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22) RETURNING "id","title","slug","description","short_description","long_description","location","target_amount","raised_amount","donor_count","status","featured","verified","category","contact_phone","contact_email","beneficiary_details","visibility","seo_title","seo_description","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at";
+2025-08-14 18:05:58 [[32minfo[39m]: Database Operation
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "operation": "Campaign created",
+  "model": "Campaign",
+  "campaignId": "d33922fa-d8e2-4ee1-9b62-ad1de51d11cf",
+  "title": "Test JSON Campaign API Testing",
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "status": "draft",
+  "hasShortDescription": true,
+  "tagsCount": 0,
+  "metaKeywordsCount": 0
+}
+2025-08-14 18:05:58 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174957975_f590fu",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "statusCode": 201,
+  "responseTime": "30ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "1076",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "userEmail": "admin@shivdhaam.org",
+  "userRole": "super_admin"
+}
+2025-08-14 18:05:58 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/",
+  "statusCode": 201,
+  "responseTime": "30ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+2025-08-14 18:06:18 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174978336_q424bz",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "1221"
+}
+2025-08-14 18:06:18 [[32minfo[39m]: Authentication Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "action": "Token authenticated",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "email": "admin@shivdhaam.org",
+  "role": "super_admin"
+}
+2025-08-14 18:06:18 [[32minfo[39m]: Processed uploaded files:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "fields": [],
+  "totalFiles": 0
+}
+2025-08-14 18:06:18 [[32minfo[39m]: Files uploaded for campaign:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "fieldsWithFiles": [],
+  "totalFiles": 0
+}
+2025-08-14 18:06:18 [[32minfo[39m]: Creating campaign with data:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "title": "Test FormData Campaign No Files",
+  "slug": "test-formdata-campaign-no-files",
+  "category": "healthcare",
+  "status": "draft",
+  "hasImages": false,
+  "imageCount": 0,
+  "featuredImageFromFormData": false,
+  "galleryImagesFromFormData": 0,
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+Executing (default): SELECT "id", "title", "slug", "description", "short_description", "long_description", "location", "target_amount", "raised_amount", "donor_count", "status", "featured", "verified", "category", "contact_phone", "contact_email", "beneficiary_details", "visibility", "seo_title", "seo_description", "tags", "meta_keywords", "start_date", "end_date", "images", "metadata", "created_by", "created_at", "updated_at" FROM "campaigns" AS "Campaign" WHERE "Campaign"."slug" = 'test-formdata-campaign-no-files';
+Executing (default): INSERT INTO "campaigns" ("id","title","slug","description","short_description","target_amount","raised_amount","donor_count","status","featured","verified","category","visibility","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22) RETURNING "id","title","slug","description","short_description","long_description","location","target_amount","raised_amount","donor_count","status","featured","verified","category","contact_phone","contact_email","beneficiary_details","visibility","seo_title","seo_description","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at";
+2025-08-14 18:06:18 [[32minfo[39m]: Database Operation
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "operation": "Campaign created",
+  "model": "Campaign",
+  "campaignId": "77ebe15b-c19f-48ec-b116-2d8f7fc6d9ce",
+  "title": "Test FormData Campaign No Files",
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "status": "draft",
+  "hasShortDescription": true,
+  "tagsCount": 0,
+  "metaKeywordsCount": 0
+}
+2025-08-14 18:06:18 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755174978336_q424bz",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "statusCode": 201,
+  "responseTime": "47ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "1078",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "userEmail": "admin@shivdhaam.org",
+  "userRole": "super_admin"
+}
+2025-08-14 18:06:18 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/",
+  "statusCode": 201,
+  "responseTime": "47ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+2025-08-14 18:09:12 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175152032_cotz9s",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "2212"
+}
+2025-08-14 18:09:12 [[32minfo[39m]: Authentication Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "action": "Token authenticated",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "email": "admin@shivdhaam.org",
+  "role": "super_admin"
+}
+2025-08-14 18:09:12 [[32minfo[39m]: Processed uploaded files:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "fields": [
+    "featured_image"
+  ],
+  "totalFiles": 1
+}
+2025-08-14 18:09:12 [[32minfo[39m]: Files uploaded for campaign:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "fieldsWithFiles": [
+    "featured_image"
+  ],
+  "totalFiles": 1
+}
+2025-08-14 18:09:12 [[32minfo[39m]: Creating campaign with data:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "title": "Test FormData Single File Upload",
+  "slug": "test-formdata-single-file-upload",
+  "category": "infrastructure",
+  "status": "draft",
+  "hasImages": true,
+  "imageCount": 1,
+  "featuredImageFromFormData": true,
+  "galleryImagesFromFormData": 0,
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+Executing (default): SELECT "id", "title", "slug", "description", "short_description", "long_description", "location", "target_amount", "raised_amount", "donor_count", "status", "featured", "verified", "category", "contact_phone", "contact_email", "beneficiary_details", "visibility", "seo_title", "seo_description", "tags", "meta_keywords", "start_date", "end_date", "images", "metadata", "created_by", "created_at", "updated_at" FROM "campaigns" AS "Campaign" WHERE "Campaign"."slug" = 'test-formdata-single-file-upload';
+Executing (default): INSERT INTO "campaigns" ("id","title","slug","description","short_description","target_amount","raised_amount","donor_count","status","featured","verified","category","visibility","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22) RETURNING "id","title","slug","description","short_description","long_description","location","target_amount","raised_amount","donor_count","status","featured","verified","category","contact_phone","contact_email","beneficiary_details","visibility","seo_title","seo_description","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at";
+2025-08-14 18:09:12 [[32minfo[39m]: Database Operation
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "operation": "Campaign created",
+  "model": "Campaign",
+  "campaignId": "d102aee3-4ee9-4d30-9c70-0799b62f4646",
+  "title": "Test FormData Single File Upload",
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "status": "draft",
+  "hasShortDescription": true,
+  "tagsCount": 0,
+  "metaKeywordsCount": 0
+}
+2025-08-14 18:09:12 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175152032_cotz9s",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "statusCode": 201,
+  "responseTime": "54ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "1169",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "userEmail": "admin@shivdhaam.org",
+  "userRole": "super_admin"
+}
+2025-08-14 18:09:12 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/",
+  "statusCode": 201,
+  "responseTime": "54ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+2025-08-14 18:09:32 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175172452_81dcjv",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "4215"
+}
+2025-08-14 18:09:32 [[32minfo[39m]: Authentication Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "action": "Token authenticated",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "email": "admin@shivdhaam.org",
+  "role": "super_admin"
+}
+2025-08-14 18:09:32 [[32minfo[39m]: Processed uploaded files:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "fields": [
+    "featured_image",
+    "gallery_images"
+  ],
+  "totalFiles": 3
+}
+2025-08-14 18:09:32 [[32minfo[39m]: Files uploaded for campaign:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "fieldsWithFiles": [
+    "featured_image",
+    "gallery_images"
+  ],
+  "totalFiles": 3
+}
+2025-08-14 18:09:32 [[32minfo[39m]: Creating campaign with data:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "title": "Test FormData Multiple File Uploads",
+  "slug": "test-formdata-multiple-file-uploads",
+  "category": "social_welfare",
+  "status": "draft",
+  "hasImages": true,
+  "imageCount": 3,
+  "featuredImageFromFormData": true,
+  "galleryImagesFromFormData": 2,
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+Executing (default): SELECT "id", "title", "slug", "description", "short_description", "long_description", "location", "target_amount", "raised_amount", "donor_count", "status", "featured", "verified", "category", "contact_phone", "contact_email", "beneficiary_details", "visibility", "seo_title", "seo_description", "tags", "meta_keywords", "start_date", "end_date", "images", "metadata", "created_by", "created_at", "updated_at" FROM "campaigns" AS "Campaign" WHERE "Campaign"."slug" = 'test-formdata-multiple-file-uploads';
+Executing (default): INSERT INTO "campaigns" ("id","title","slug","description","short_description","target_amount","raised_amount","donor_count","status","featured","verified","category","visibility","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22) RETURNING "id","title","slug","description","short_description","long_description","location","target_amount","raised_amount","donor_count","status","featured","verified","category","contact_phone","contact_email","beneficiary_details","visibility","seo_title","seo_description","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at";
+2025-08-14 18:09:32 [[32minfo[39m]: Database Operation
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "operation": "Campaign created",
+  "model": "Campaign",
+  "campaignId": "69217c8a-11bb-48d3-b895-34cfe0147d51",
+  "title": "Test FormData Multiple File Uploads",
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "status": "draft",
+  "hasShortDescription": true,
+  "tagsCount": 0,
+  "metaKeywordsCount": 0
+}
+2025-08-14 18:09:32 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175172452_81dcjv",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "statusCode": 201,
+  "responseTime": "55ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "1382",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "userEmail": "admin@shivdhaam.org",
+  "userRole": "super_admin"
+}
+2025-08-14 18:09:32 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/",
+  "statusCode": 201,
+  "responseTime": "55ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+2025-08-14 18:10:00 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175200807_pbff11",
+  "method": "HEAD",
+  "url": "/upload/campaigns/1755175152047-7c359938-bd08-41b1-adc7-c9164f85dfc4.jpg",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+2025-08-14 18:10:00 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175200807_pbff11",
+  "method": "HEAD",
+  "url": "/upload/campaigns/1755175152047-7c359938-bd08-41b1-adc7-c9164f85dfc4.jpg",
+  "statusCode": 200,
+  "responseTime": "6ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 825
+}
+2025-08-14 18:10:00 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "HEAD",
+  "url": "/campaigns/1755175152047-7c359938-bd08-41b1-adc7-c9164f85dfc4.jpg",
+  "statusCode": 200,
+  "responseTime": "6ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-14 18:10:00 [[33mwarn[39m]: HTTP Request Closed Unexpectedly
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175200807_pbff11",
+  "method": "HEAD",
+  "url": "/upload/campaigns/1755175152047-7c359938-bd08-41b1-adc7-c9164f85dfc4.jpg",
+  "responseTime": "9ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0"
+}
+2025-08-14 18:10:06 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175206675_tkxdb3",
+  "method": "HEAD",
+  "url": "/upload/campaigns/1755175172469-e4abbc62-c6d9-488a-8292-4941f4e1f105.jpg",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+2025-08-14 18:10:06 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175206675_tkxdb3",
+  "method": "HEAD",
+  "url": "/upload/campaigns/1755175172469-e4abbc62-c6d9-488a-8292-4941f4e1f105.jpg",
+  "statusCode": 200,
+  "responseTime": "4ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 825
+}
+2025-08-14 18:10:06 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "HEAD",
+  "url": "/campaigns/1755175172469-e4abbc62-c6d9-488a-8292-4941f4e1f105.jpg",
+  "statusCode": 200,
+  "responseTime": "4ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-14 18:10:06 [[33mwarn[39m]: HTTP Request Closed Unexpectedly
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175206675_tkxdb3",
+  "method": "HEAD",
+  "url": "/upload/campaigns/1755175172469-e4abbc62-c6d9-488a-8292-4941f4e1f105.jpg",
+  "responseTime": "6ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0"
+}
+2025-08-14 18:10:12 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175212176_eswg62",
+  "method": "HEAD",
+  "url": "/upload/campaigns/1755175172470-8ac6a435-66af-488c-9dfe-2dfb17322a63.jpg",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 0
+}
+2025-08-14 18:10:12 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175212176_eswg62",
+  "method": "HEAD",
+  "url": "/upload/campaigns/1755175172470-8ac6a435-66af-488c-9dfe-2dfb17322a63.jpg",
+  "statusCode": 200,
+  "responseTime": "6ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": 825
+}
+2025-08-14 18:10:12 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "HEAD",
+  "url": "/campaigns/1755175172470-8ac6a435-66af-488c-9dfe-2dfb17322a63.jpg",
+  "statusCode": 200,
+  "responseTime": "6ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-14 18:10:12 [[33mwarn[39m]: HTTP Request Closed Unexpectedly
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175212176_eswg62",
+  "method": "HEAD",
+  "url": "/upload/campaigns/1755175172470-8ac6a435-66af-488c-9dfe-2dfb17322a63.jpg",
+  "responseTime": "8ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0"
+}
+2025-08-14 18:10:40 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175240963_qegf3x",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "25"
+}
+2025-08-14 18:10:40 [[32minfo[39m]: Authentication Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "action": "Token authenticated",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "email": "admin@shivdhaam.org",
+  "role": "super_admin"
+}
+2025-08-14 18:10:40 [[33mwarn[39m]: Security Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "event": "Validation failed",
+  "path": "/",
+  "method": "POST",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "errors": {
+    "body": [
+      {
+        "field": "title",
+        "message": "Title must be at least 5 characters long",
+        "type": "string.min",
+        "value": "Test"
+      },
+      {
+        "field": "slug",
+        "message": "Slug is required",
+        "type": "any.required"
+      },
+      {
+        "field": "description",
+        "message": "Description is required",
+        "type": "any.required"
+      },
+      {
+        "field": "short_description",
+        "message": "Short description is required",
+        "type": "any.required"
+      },
+      {
+        "field": "target_amount",
+        "message": "Goal amount is required",
+        "type": "any.required"
+      },
+      {
+        "field": "category",
+        "message": "Category is required",
+        "type": "any.required"
+      },
+      {
+        "field": "start_date",
+        "message": "Start date is required",
+        "type": "any.required"
+      },
+      {
+        "field": "end_date",
+        "message": "End date is required",
+        "type": "any.required"
+      }
+    ]
+  }
+}
+2025-08-14 18:10:40 [[33mwarn[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175240963_qegf3x",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "statusCode": 400,
+  "responseTime": "27ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "733",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "userEmail": "admin@shivdhaam.org",
+  "userRole": "super_admin",
+  "error": true,
+  "errorMessage": "Validation failed"
+}
+2025-08-14 18:10:40 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/",
+  "statusCode": 400,
+  "responseTime": "27ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+2025-08-14 18:10:53 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175253739_51th5o",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "381"
+}
+2025-08-14 18:10:53 [[32minfo[39m]: Authentication Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "action": "Token authenticated",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "email": "admin@shivdhaam.org",
+  "role": "super_admin"
+}
+2025-08-14 18:10:53 [[33mwarn[39m]: Security Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "event": "Validation failed",
+  "path": "/",
+  "method": "POST",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "errors": {
+    "body": [
+      {
+        "field": "category",
+        "message": "Invalid category specified",
+        "type": "any.only",
+        "value": "invalid_category"
+      }
+    ]
+  }
+}
+2025-08-14 18:10:53 [[33mwarn[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175253739_51th5o",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "statusCode": 400,
+  "responseTime": "16ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "172",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "userEmail": "admin@shivdhaam.org",
+  "userRole": "super_admin",
+  "error": true,
+  "errorMessage": "Validation failed"
+}
+2025-08-14 18:10:53 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/",
+  "statusCode": 400,
+  "responseTime": "16ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+2025-08-14 18:11:05 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175265219_l4gazi",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "314"
+}
+2025-08-14 18:11:05 [[33mwarn[39m]: Security Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "event": "Missing authentication token",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "path": "/"
+}
+2025-08-14 18:11:05 [[33mwarn[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175265219_l4gazi",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "statusCode": 401,
+  "responseTime": "5ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "51",
+  "error": true,
+  "errorMessage": "Access token required"
+}
+2025-08-14 18:11:05 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/",
+  "statusCode": 401,
+  "responseTime": "5ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1"
+}
+2025-08-14 18:11:45 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175305384_2xwxy0",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "251902"
+}
+2025-08-14 18:11:45 [[32minfo[39m]: Authentication Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "action": "Token authenticated",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "email": "admin@shivdhaam.org",
+  "role": "super_admin"
+}
+2025-08-14 18:11:45 [[32minfo[39m]: Processed uploaded files:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "fields": [
+    "featured_image"
+  ],
+  "totalFiles": 1
+}
+2025-08-14 18:11:45 [[32minfo[39m]: Files uploaded for campaign:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "fieldsWithFiles": [
+    "featured_image"
+  ],
+  "totalFiles": 1
+}
+2025-08-14 18:11:45 [[32minfo[39m]: Creating campaign with data:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "title": "Test Large File Upload",
+  "slug": "test-large-file-upload",
+  "category": "infrastructure",
+  "status": "draft",
+  "hasImages": true,
+  "imageCount": 1,
+  "featuredImageFromFormData": true,
+  "galleryImagesFromFormData": 0,
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+Executing (default): SELECT "id", "title", "slug", "description", "short_description", "long_description", "location", "target_amount", "raised_amount", "donor_count", "status", "featured", "verified", "category", "contact_phone", "contact_email", "beneficiary_details", "visibility", "seo_title", "seo_description", "tags", "meta_keywords", "start_date", "end_date", "images", "metadata", "created_by", "created_at", "updated_at" FROM "campaigns" AS "Campaign" WHERE "Campaign"."slug" = 'test-large-file-upload';
+Executing (default): INSERT INTO "campaigns" ("id","title","slug","description","short_description","target_amount","raised_amount","donor_count","status","featured","verified","category","visibility","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22) RETURNING "id","title","slug","description","short_description","long_description","location","target_amount","raised_amount","donor_count","status","featured","verified","category","contact_phone","contact_email","beneficiary_details","visibility","seo_title","seo_description","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at";
+2025-08-14 18:11:45 [[32minfo[39m]: Database Operation
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "operation": "Campaign created",
+  "model": "Campaign",
+  "campaignId": "9952ae2a-0e2f-40dc-8ef7-2a0f54d63cd3",
+  "title": "Test Large File Upload",
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "status": "draft",
+  "hasShortDescription": true,
+  "tagsCount": 0,
+  "metaKeywordsCount": 0
+}
+2025-08-14 18:11:45 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175305384_2xwxy0",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "statusCode": 201,
+  "responseTime": "53ms",
+  "ip": "::1",
+  "userAgent": "curl/8.5.0",
+  "contentLength": "1050",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "userEmail": "admin@shivdhaam.org",
+  "userRole": "super_admin"
+}
+2025-08-14 18:11:45 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/",
+  "statusCode": 201,
+  "responseTime": "53ms",
+  "userAgent": "curl/8.5.0",
+  "ip": "::1",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+2025-08-14 18:17:18 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175638473_lizcmu",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
+  "contentLength": "916"
+}
+2025-08-14 18:17:18 [[32minfo[39m]: Authentication Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "action": "Token authenticated",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "email": "admin@shivdhaam.org",
+  "role": "super_admin"
+}
+2025-08-14 18:17:18 [[33mwarn[39m]: Failed to parse location as JSON:
+{
+  "service": "bdrf-backend",
+  "environment": "development"
+}
+2025-08-14 18:17:18 [[32minfo[39m]: Creating campaign with data:
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "title": "faipgapogapoigrapipgreaipegaipegraiperigioegraoieagrpoiraeg",
+  "slug": "faipgapogapoigrapipgreaipegaipegraiperigioegraoieagrpoiraeg",
+  "category": "infrastructure",
+  "status": "active",
+  "hasImages": false,
+  "imageCount": 0,
+  "featuredImageFromFormData": false,
+  "galleryImagesFromFormData": 0,
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+Executing (default): SELECT "id", "title", "slug", "description", "short_description", "long_description", "location", "target_amount", "raised_amount", "donor_count", "status", "featured", "verified", "category", "contact_phone", "contact_email", "beneficiary_details", "visibility", "seo_title", "seo_description", "tags", "meta_keywords", "start_date", "end_date", "images", "metadata", "created_by", "created_at", "updated_at" FROM "campaigns" AS "Campaign" WHERE "Campaign"."slug" = 'faipgapogapoigrapipgreaipegaipegraiperigioegraoieagrpoiraeg';
+Executing (default): INSERT INTO "campaigns" ("id","title","slug","description","short_description","long_description","location","target_amount","raised_amount","donor_count","status","featured","verified","category","contact_phone","contact_email","visibility","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23,$24,$25,$26) RETURNING "id","title","slug","description","short_description","long_description","location","target_amount","raised_amount","donor_count","status","featured","verified","category","contact_phone","contact_email","beneficiary_details","visibility","seo_title","seo_description","tags","meta_keywords","start_date","end_date","images","metadata","created_by","created_at","updated_at";
+2025-08-14 18:17:18 [[32minfo[39m]: Database Operation
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "operation": "Campaign created",
+  "model": "Campaign",
+  "campaignId": "f23f4f62-87d9-4765-92e3-ea7c7042820d",
+  "title": "faipgapogapoigrapipgreaipegaipegraiperigioegraoieagrpoiraeg",
+  "createdBy": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "status": "active",
+  "hasShortDescription": true,
+  "tagsCount": 1,
+  "metaKeywordsCount": 0
+}
+2025-08-14 18:17:18 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175638473_lizcmu",
+  "method": "POST",
+  "url": "/api/campaigns",
+  "statusCode": 201,
+  "responseTime": "52ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
+  "contentLength": 0,
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "userEmail": "admin@shivdhaam.org",
+  "userRole": "super_admin"
+}
+2025-08-14 18:17:18 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/",
+  "statusCode": 201,
+  "responseTime": "52ms",
+  "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
+  "ip": "::ffff:127.0.0.1",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+2025-08-14 18:17:18 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175638630_lyay82",
+  "method": "POST",
+  "url": "/api/campaigns/f23f4f62-87d9-4765-92e3-ea7c7042820d/images",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
+  "contentLength": "77022"
+}
+2025-08-14 18:17:18 [[32minfo[39m]: Authentication Event
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "action": "Token authenticated",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "email": "admin@shivdhaam.org",
+  "role": "super_admin"
+}
+2025-08-14 18:17:18 [[31merror[39m]: Application Error Unexpected field
+MulterError: Unexpected field
+    at wrappedFileFilter (/home/anil/shivdhaam backend/node_modules/multer/index.js:40:19)
+    at Multipart.<anonymous> (/home/anil/shivdhaam backend/node_modules/multer/lib/make-middleware.js:109:7)
+    at Multipart.emit (node:events:519:28)
+    at HeaderParser.cb (/home/anil/shivdhaam backend/node_modules/busboy/lib/types/multipart.js:358:14)
+    at HeaderParser.push (/home/anil/shivdhaam backend/node_modules/busboy/lib/types/multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (/home/anil/shivdhaam backend/node_modules/busboy/lib/types/multipart.js:394:37)
+    at feed (/home/anil/shivdhaam backend/node_modules/streamsearch/lib/sbmh.js:248:10)
+    at SBMH.push (/home/anil/shivdhaam backend/node_modules/streamsearch/lib/sbmh.js:104:16)
+    at Multipart._write (/home/anil/shivdhaam backend/node_modules/busboy/lib/types/multipart.js:567:19)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "name": "MulterError",
+  "code": "LIMIT_UNEXPECTED_FILE",
+  "url": "/api/campaigns/f23f4f62-87d9-4765-92e3-ea7c7042820d/images",
+  "method": "POST",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "body": {},
+  "params": {},
+  "query": {}
+}
+2025-08-14 18:17:18 [[33mwarn[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175638630_lyay82",
+  "method": "POST",
+  "url": "/api/campaigns/f23f4f62-87d9-4765-92e3-ea7c7042820d/images",
+  "statusCode": 400,
+  "responseTime": "33ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
+  "contentLength": 0,
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "userEmail": "admin@shivdhaam.org",
+  "userRole": "super_admin",
+  "error": true
+}
+2025-08-14 18:17:18 [[33mwarn[39m]: HTTP Request Warning
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "POST",
+  "url": "/api/campaigns/f23f4f62-87d9-4765-92e3-ea7c7042820d/images",
+  "statusCode": 400,
+  "responseTime": "33ms",
+  "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
+  "ip": "::ffff:127.0.0.1",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+2025-08-14 18:17:20 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175640419_0h9811",
+  "method": "GET",
+  "url": "/api/campaigns?page=1&limit=50&sort_by=created_at&sort_order=desc",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
+  "contentLength": 0
+}
+Executing (default): SELECT count("Campaign"."id") AS "count" FROM "campaigns" AS "Campaign" LEFT OUTER JOIN "users" AS "creator" ON "Campaign"."created_by" = "creator"."id" AND ("creator"."deleted_at" IS NULL);
+Executing (default): SELECT "Campaign"."id", "Campaign"."title", "Campaign"."slug", "Campaign"."description", "Campaign"."short_description", "Campaign"."long_description", "Campaign"."location", "Campaign"."target_amount", "Campaign"."raised_amount", "Campaign"."donor_count", "Campaign"."status", "Campaign"."featured", "Campaign"."verified", "Campaign"."category", "Campaign"."contact_phone", "Campaign"."contact_email", "Campaign"."beneficiary_details", "Campaign"."visibility", "Campaign"."seo_title", "Campaign"."seo_description", "Campaign"."tags", "Campaign"."meta_keywords", "Campaign"."start_date", "Campaign"."end_date", "Campaign"."images", "Campaign"."metadata", "Campaign"."created_by", "Campaign"."created_at", "Campaign"."updated_at", "creator"."id" AS "creator.id", "creator"."first_name" AS "creator.first_name", "creator"."last_name" AS "creator.last_name", "creator"."email" AS "creator.email" FROM "campaigns" AS "Campaign" LEFT OUTER JOIN "users" AS "creator" ON "Campaign"."created_by" = "creator"."id" AND ("creator"."deleted_at" IS NULL) ORDER BY "Campaign"."created_at" DESC LIMIT 50 OFFSET 0;
+2025-08-14 18:17:20 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175640419_0h9811",
+  "method": "GET",
+  "url": "/api/campaigns?page=1&limit=50&sort_by=created_at&sort_order=desc",
+  "statusCode": 200,
+  "responseTime": "61ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
+  "contentLength": 0,
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "userEmail": "admin@shivdhaam.org",
+  "userRole": "super_admin"
+}
+2025-08-14 18:17:20 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/?page=1&limit=50&sort_by=created_at&sort_order=desc",
+  "statusCode": 200,
+  "responseTime": "61ms",
+  "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
+  "ip": "::ffff:127.0.0.1",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+2025-08-14 18:17:20 [[32minfo[39m]: HTTP Request Started
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175640621_q40ww4",
+  "method": "GET",
+  "url": "/api/campaigns?page=1&limit=50&sort_by=created_at&sort_order=desc",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
+  "contentLength": 0
+}
+Executing (default): SELECT count("Campaign"."id") AS "count" FROM "campaigns" AS "Campaign" LEFT OUTER JOIN "users" AS "creator" ON "Campaign"."created_by" = "creator"."id" AND ("creator"."deleted_at" IS NULL);
+Executing (default): SELECT "Campaign"."id", "Campaign"."title", "Campaign"."slug", "Campaign"."description", "Campaign"."short_description", "Campaign"."long_description", "Campaign"."location", "Campaign"."target_amount", "Campaign"."raised_amount", "Campaign"."donor_count", "Campaign"."status", "Campaign"."featured", "Campaign"."verified", "Campaign"."category", "Campaign"."contact_phone", "Campaign"."contact_email", "Campaign"."beneficiary_details", "Campaign"."visibility", "Campaign"."seo_title", "Campaign"."seo_description", "Campaign"."tags", "Campaign"."meta_keywords", "Campaign"."start_date", "Campaign"."end_date", "Campaign"."images", "Campaign"."metadata", "Campaign"."created_by", "Campaign"."created_at", "Campaign"."updated_at", "creator"."id" AS "creator.id", "creator"."first_name" AS "creator.first_name", "creator"."last_name" AS "creator.last_name", "creator"."email" AS "creator.email" FROM "campaigns" AS "Campaign" LEFT OUTER JOIN "users" AS "creator" ON "Campaign"."created_by" = "creator"."id" AND ("creator"."deleted_at" IS NULL) ORDER BY "Campaign"."created_at" DESC LIMIT 50 OFFSET 0;
+2025-08-14 18:17:20 [[32minfo[39m]: HTTP Request Completed
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "requestId": "req_1755175640621_q40ww4",
+  "method": "GET",
+  "url": "/api/campaigns?page=1&limit=50&sort_by=created_at&sort_order=desc",
+  "statusCode": 304,
+  "responseTime": "26ms",
+  "ip": "::ffff:127.0.0.1",
+  "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
+  "contentLength": 0,
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490",
+  "userEmail": "admin@shivdhaam.org",
+  "userRole": "super_admin"
+}
+2025-08-14 18:17:20 [[32minfo[39m]: HTTP Request
+{
+  "service": "bdrf-backend",
+  "environment": "development",
+  "method": "GET",
+  "url": "/?page=1&limit=50&sort_by=created_at&sort_order=desc",
+  "statusCode": 304,
+  "responseTime": "26ms",
+  "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
+  "ip": "::ffff:127.0.0.1",
+  "userId": "6eda1a6d-6728-4d9c-ac9d-0e5a0726a490"
+}
+Redis error: SocketClosedUnexpectedlyError: Socket closed unexpectedly
+    at Socket.<anonymous> (/home/anil/shivdhaam backend/node_modules/@redis/client/dist/lib/client/socket.js:202:33)
+    at Object.onceWrapper (node:events:634:26)
+    at Socket.emit (node:events:519:28)
+    at TCP.<anonymous> (node:net:339:12)
+Redis reconnecting in undefinedms (attempt undefined)
+Redis error: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 6379
+}
+Redis reconnecting in undefinedms (attempt undefined)
+Redis error: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 6379
+}
+Redis reconnecting in undefinedms (attempt undefined)
+Redis error: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 6379
+}
+Redis reconnecting in undefinedms (attempt undefined)
+Redis error: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 6379
+}
+Redis reconnecting in undefinedms (attempt undefined)
+Redis error: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 6379
+}
+Redis reconnecting in undefinedms (attempt undefined)
+Redis error: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 6379
+}
+2025-08-14 18:29:41 [[32minfo[39m]: Received SIGTERM. Starting graceful shutdown...
+{
+  "service": "bdrf-backend",
+  "environment": "development"
+}
+2025-08-14 18:29:41 [[32minfo[39m]: Database connection closed
+{
+  "service": "bdrf-backend",
+  "environment": "development"
+}
+2025-08-14 18:29:41 [[32minfo[39m]: Graceful shutdown completed
+{
+  "service": "bdrf-backend",
+  "environment": "development"
+}
