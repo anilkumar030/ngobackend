@@ -31,11 +31,11 @@ const convertDecimalFields = (campaignData) => {
 const getCampaigns = catchAsync(async (req, res) => {
   const {
     page = 1,
-    limit = 10,
+    limit = 30,
     category,
     status,
     featured,
-    sort_by = 'updated_at',
+    sort_by = 'created_at',
     sort_order = 'desc',
     search,
     min_goal,
