@@ -29,7 +29,9 @@ const convertDecimalFields = (campaignData) => {
  * Get all campaigns with filters and pagination
  */
 const getCampaigns = catchAsync(async (req, res) => {
-  const {
+
+    //default value of campaigs if params is not provided, page is 1, limit is 30, sort_by is created_at, sort_order is desc
+  let {
     page = 1,
     limit = 30,
     category,
@@ -49,6 +51,11 @@ const getCampaigns = catchAsync(async (req, res) => {
     end_date_from,
     end_date_to,
   } = req.query;
+
+  page = page || 1;
+  limit = limit || 30;
+  sort_by = sort_by || 'created_at';
+  sort_order = sort_order || 'desc';
 
   // Check cache for public campaign listings
   const isPublicListing = !created_by && !req.user;
